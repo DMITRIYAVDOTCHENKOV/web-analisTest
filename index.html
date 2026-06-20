@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DoorCraft — двери на заказ</title>
+  <meta name="description" content="Тестовый сайт: каталог дверей, заявки, клики, раскрывающиеся описания и FAQ." />
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--text:#e5e7eb;--accent:#f59e0b;--accent2:#22c55e;--line:#243041;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#0b1220,#111827 35%,#f8fafc 35%,#f8fafc);color:#0f172a}
+    a{color:inherit;text-decoration:none} .container{width:min(1120px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(15,23,42,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;color:var(--text)} .logo{font-weight:800;letter-spacing:.5px}
+    .menu{display:flex;gap:18px;flex-wrap:wrap;font-size:14px} .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--accent);color:#111827;font-weight:700;border:none;cursor:pointer}
+    .btn.secondary{background:#1f2937;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:44px 0 58px;color:var(--text)}
+    .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.02;margin:0 0 14px} .hero p{color:#cbd5e1;font-size:18px;max-width:58ch}
+    .hero-card{background:rgba(17,24,39,.72);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+    .hero-img{width:100%;border-radius:18px;display:block;aspect-ratio:4/3;object-fit:cover}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px} .badge{background:rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;font-size:13px}
+    main{padding:34px 0 70px} section{margin-top:42px}
+    h2{font-size:30px;margin:0 0 14px} .sub{color:#475569;max-width:70ch}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px} .card{background:var(--white);border:1px solid #e2e8f0;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+    .card img{width:100%;height:220px;object-fit:cover;display:block} .card-body{padding:16px} .price{font-size:22px;font-weight:800} .meta{color:#64748b;font-size:14px}
+    details{margin-top:10px;border-top:1px solid #e2e8f0;padding-top:10px} summary{cursor:pointer;font-weight:700;color:#0f172a}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px} .buy{background:var(--accent2);color:#052e16}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px} .feature{background:linear-gradient(180deg,#fff,#eef2ff);padding:18px;border-radius:18px;border:1px solid #e2e8f0}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:16px} .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:16px}
+    .form-wrap{display:grid;grid-template-columns:1fr .9fr;gap:18px;align-items:start} form{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:20px} label{display:block;font-weight:700;margin:12px 0 8px}
+    input,textarea,select{width:100%;padding:14px;border-radius:14px;border:1px solid #cbd5e1;font:inherit} textarea{min-height:120px;resize:vertical} .note{color:#64748b;font-size:14px;margin-top:10px}
+    footer{background:#0f172a;color:#cbd5e1;padding:28px 0;margin-top:60px} .footer-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media (max-width:900px){.hero,.grid,.features,.faq,.form-wrap{grid-template-columns:1fr}.menu{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">DoorCraft</div>
+      <nav class="menu">
+        <a href="#catalog">Каталог</a><a href="#benefits">Преимущества</a><a href="#faq">FAQ</a><a href="#lead">Заявка</a>
+      </nav>
+      <a class="btn" href="#lead">Оставить заявку</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container hero">
+      <div>
+        <h1>Красивый тестовый сайт для продаж дверей</h1>
+        <p>Это готовый HTML-шаблон для обучения: клики по карточкам, раскрытие описаний, кнопки покупки, форма заявки, FAQ и каталожная структура.</p>
+        <div class="badges"><span class="badge">События кликов</span><span class="badge">Форма заявки</span><span class="badge">Каталог</span><span class="badge">FAQ</span></div>
+      </div>
+      <div class="hero-card">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Современная дверь в интерьере">
+      </div>
+    </div>
+
+    <div class="container">
+      <section id="catalog">
+        <h2>Каталог дверей</h2>
+        <p class="sub">Кликайте по карточкам, раскрывайте описание и нажимайте «Купить» для отслеживания событий.</p>
+        <div class="grid">
+          <article class="card" data-product="classic">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Классическая деревянная дверь">
+            <div class="card-body">
+              <div class="price">14 900 ₽</div>
+              <div class="meta">Дверь Classic Oak • 2000×800</div>
+              <details><summary>Описание</summary><p>Надёжная межкомнатная дверь с плотным полотном, мягким закрыванием и нейтральным дизайном.</p></details>
+              <div class="actions">
+                <button class="btn secondary buy">Купить</button>
+                <button class="btn secondary">Подробнее</button>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-product="modern">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Современная дверь">
+            <div class="card-body">
+              <div class="price">18 500 ₽</div>
+              <div class="meta">Дверь Modern Line • 2100×900</div>
+              <details><summary>Описание</summary><p>Современная модель с гладкой поверхностью, подходит для светлых интерьеров и офисных зон.</p></details>
+              <div class="actions">
+                <button class="btn secondary buy">Купить</button>
+                <button class="btn secondary">Подробнее</button>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-product="premium">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Премиальная дверь">
+            <div class="card-body">
+              <div class="price">27 900 ₽</div>
+              <div class="meta">Дверь Premium Black • 2200×900</div>
+              <details><summary>Описание</summary><p>Премиальная дверь с усиленной конструкцией, стильной фурнитурой и хорошей шумоизоляцией.</p></details>
+              <div class="actions">
+                <button class="btn secondary buy">Купить</button>
+                <button class="btn secondary">Подробнее</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="benefits">
+        <h2>Почему выбирают нас</h2>
+        <div class="features">
+          <div class="feature"><strong>Быстрый расчёт</strong><p>Удобно показывать интерес к покупке и клики по CTA.</p></div>
+          <div class="feature"><strong>Каталог с интерактивом</strong><p>Карточки, кнопки и раскрывающиеся блоки для анализа поведения.</p></div>
+          <div class="feature"><strong>Форма заявки</strong><p>Подходит для целей по отправке лидов.</p></div>
+          <div class="feature"><strong>Готово для GitHub Pages</strong><p>Один файл, легко загрузить и начать тестировать.</p></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>Частые вопросы</h2>
+        <div class="faq">
+          <details><summary>Как выбрать дверь?</summary><p>Смотрите на размеры, тип покрытия, шумоизоляцию и стиль интерьера.</p></details>
+          <details><summary>Можно ли заказать замер?</summary><p>Да, оставьте заявку в форме ниже — это удобно для отслеживания конверсии.</p></details>
+          <details><summary>Есть ли доставка?</summary><p>В тестовом сайте можно добавить этот блок как отдельное событие или страницу.</p></details>
+          <details><summary>Как отслеживать клики?</summary><p>Привяжите обработчики к кнопкам и отправляйте цели при нажатии.</p></details>
+        </div>
+      </section>
+
+      <section id="lead">
+        <h2>Оставить заявку</h2>
+        <div class="form-wrap">
+          <form id="leadForm">
+            <label for="name">Имя</label>
+            <input id="name" name="name" placeholder="Иван" required>
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" placeholder="+49 ..." required>
+            <label for="product">Интересующая дверь</label>
+            <select id="product" name="product">
+              <option>Classic Oak</option><option>Modern Line</option><option>Premium Black</option>
+            </select>
+            <label for="comment">Комментарий</label>
+            <textarea id="comment" name="comment" placeholder="Например, нужен замер и доставка"></textarea>
+            <button class="btn" type="submit">Отправить заявку</button>
+            <div class="note">Здесь удобно тестировать отправку формы и ввод в поля.</div>
+          </form>
+          <div class="hero-card" style="color:#e5e7eb">
+            <h3 style="margin-top:0">Что можно отслеживать</h3>
+            <ul>
+              <li>Клики по кнопке «Купить».</li>
+              <li>Открытие описаний в каталоге.</li>
+              <li>Отправку формы.</li>
+              <li>Переходы к заявке из хедера.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong style="color:#fff">DoorCraft</strong><div>Тестовый сайт для обучения аналитике.</div></div>
+      <div>Контакты: demo@doorcraft.ru<br>+7 (000) 000-00-00</div>
+      <div>© 2026 DoorCraft</div>
+    </div>
+  </footer>
+</body>
+</html>
